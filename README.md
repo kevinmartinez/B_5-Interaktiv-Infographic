@@ -1,3 +1,3 @@
-# B_2 Interaktiv Infographic
+# B_5 Interaktiv Infographic
 
 ## Att presentera information
