@@ -5,11 +5,18 @@
   <title>B_5 Interaktiv Infographic</title>
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="js/animation.js"></script>
+
 </head>
 <body>
   <!-- Cowspiracy Infographic Start -->
   <nav class="main-nav">
-    <h1>Cowspiracy Infographic</h1>
+    <h1 class="ribbon"><strong class="ribbon-content">Cowspiracy Infographic</strong>
+    </h1>
+    <img class="cloud ball" src="img/cloud.png" alt="">
+    <img class="cloud2" src="img/cloud.png" alt="">
+    <img class="cloud3" src="img/cloud.png" alt="">
   </nav>
   <header>
 
@@ -17,10 +24,8 @@
   <!-- Climate change -->
   <article class="heaven">
     <div class="container">
-      <h2>Climate change</h2>
-      <h3>Global</h3>
-      <h3>Greenhouse</h3>
-      <h3>Gas emitions</h3>
+      <h2 class="initial-fade">Climate change</h2>
+
       <div class="clear">
         <figure>
           <img class="truck" src="img/truck-512px.svg" alt="truck" />
@@ -31,37 +36,157 @@
           <figcaption>51% due to livestock and their byproducts</figcaption>
         </figure>
       </div>
-      <p>Livestock is responsible for <span>65%</span>Nitrous oxide emissions</p>
+
+      <div class="diet-info">
+        <h3 class="fadezor">A plant based diet</h3>
+        <p>Cuts your carbon footprint <span>By 50%</span></p>
+        <img src="#" alt="a small foot representing a vegan">
+        <img src="#" alt="a big foot representing a meat eater">
+      </div>
+
+      <div>
+        <p>Livestock is responsible for <span>65%</span>Nitrous oxide emissions<br><span>{ a ghg 296x more destructive than co2}</span></p>
+      </div>
     </div>
-    <img class="cloud" src="img/cloud.png" alt="">
-    <img class="cloud2" src="img/cloud.png" alt="">
-    <img class="cloud3" src="img/cloud.png" alt="">
   </article>
+
+
+
+
+
+
+
+
+
+
   <!-- Deforestation and Species Extinction -->
   <article class="forest">
     <div class="container">
-      <h2>Deforestation &amp; Species Extinction</h2>
-          <p><span>1-2</span>Acres of rainforest are cleared every second</p>
-          <img class="tree-one" src="img/christmas-tree-icon.png" alt="">
-          <img class="tree-two" src="img/christmas-tree-icon.png" alt="">
+      <h2 class="fadezor">Deforestation <span style="display:inline-block;width:100%">&amp;</span> Species Extinction</h2>
+      <div>
+        <p><span>1-2</span> Acres of rainforest are cleared every second</p>
+      </div>
+
+
+      <div>
+        <p>Animal agriculture is responsible for <span>91%</span> of amazon destruction</p>
+      </div>
+
+
+      <div>
+        <p>Acres of rainforest cleared:</p>
+        <p>Palm oil: <span>26 million</span></p>
+        <p>Animal agriculture: <span>26 million</span></p>
+      </div>
+
+      <div>
+        <p><span>110</span> Animal and insect species are lost <span>every day</span> from rainforest destruction
+        </p>
+      </div>
+
+      <div>
+        <p>Animal agriculture is the leading cause of <span>species extinction, ocean dead zones, water pollution and habitat destruction</span></p>
+      </div>
+
+
+      <img class="tree-one" src="img/christmas-tree-icon.png" alt=""><img class="tree-two" src="img/christmas-tree-icon.png" alt="">
     </div>
   </article>
+
+
+
+
   <!-- Land use and Waste -->
   <article class="land">
     <div class="container">
-      <h2>Land Use &amp; Waste</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore est dignissimos maxime dicta consequatur ad harum animi fuga molestiae. Non placeat minus nesciunt nihil perspiciatis! Distinctio aliquid voluptas laboriosam voluptatem.</p>
-    </div>
+      <h2 class="fadezor">Land Use &amp; Waste</h2>
+
+
+      <div class="one-third">
+        <p><span>1/3</span> Land is desertified due to livestock</p>
+      </div>
+
+      <div class="pie-chart">
+        <p class="left">Livestock covers</p>
+        <div class="pie"><span>45%</span></div>
+        <p class="right"> of the earth's total land</p>
+        <!-- TODO: testing a pie chart -->
+      </div>
+
+
+      <div>
+        <p><span>1.5</span> acres land = <span>37000 LBS</span> plant based food or <span>375 LBS</span> meat</p>
+      </div>
+
+      <p><span>Land needed to feed</span> 1 person <span>for</span> 1 year:</p>
+      <p><span>Vegan =</span> 1/6th acre</p>
+      <p><span>Meat eater =</span> 18x vegan</p>
+
+      <h2 class="fadezor">Waste</h2>
+
+      <div>
+        <p>Waste from a farm of 2500 dairy cows</p>
+        <p>=</p>
+        <p>Waste from a city of 411 000 people</p>
+      </div>
+
+      <div>
+        <p><span>Every minute</span> 7 million <span>pounds of excrement are produced by animals raised for food in the US</span></p>
+      </div>
+
+    </div><!-- Container end -->
   </article>
   <!-- Water use and Fisheries -->
   <article class="water">
     <div class="container">
-      <h2>Fishing &amp; Water Use</h2>
-          <p>1 hamburger = 660 gallons of water = Equivalent to shower for <strong>2 months</strong></p>
-          <div class="ripplezor">
-            <span class="ripple"></span>
-          </div>
-    </div>
+      <h2 class="fadezor">Fishing &amp; Water Use</h2>
+
+
+      <div>
+        <p>1 hamburger = 660 gallons of water = Equivalent to shower for <strong>2 months</strong>
+        </p>
+      </div>
+
+      <!-- The ripplezor -->
+      <div class="ripplezor">
+        <span class="ripple"></span>
+      </div>
+
+
+      <div>
+        <p>The meat &amp; dairy indistry use <span>1/3</span> of earths fresh water
+        </p>
+      </div>
+
+
+      <div>
+        <p>USA <span>water use:</span></p>
+        <p>5% Domestic</p>
+        <p>55% Animal agriculture</p>
+      </div>
+
+      <h2 class="fadezor">Fisheries</h2>
+
+      <div>
+        <p><span>90 million</span> tons of fish are pulled from the oceans each year
+        </p>
+      </div>
+
+      <div>
+        <span class="fish-hole"></span>
+        <span class="fish-hole"></span>
+        <span class="fish-hole"></span>
+        <span class="fish-hole"></span>
+        <p><span>3/4</span> of the world's fisheries are exploited</p>
+      </div>
+
+      <div>
+        <p>
+          For every <span>1 pound</span> of fish caught <span>5 pounds</span> of unintended marine species are caught and discarded as by-kill
+        </p>
+      </div>
+
+    </div><!-- Container end -->
   </article>
 </body>
 </html>
