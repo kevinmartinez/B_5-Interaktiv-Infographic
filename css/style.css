@@ -1,0 +1,737 @@
+* {
+  box-sizing: border-box;
+}
+
+/* TODO: Remove red helper div */
+div {
+  border: 1px solid red;
+}
+/* TODO: This is a helper class*/
+span  {
+  color: #e8e820;
+  font-weight: bold;
+}
+
+.main-nav,
+.heaven,
+.forest,
+.water,
+.land {
+  padding: 20px 0;
+  position: relative;
+}
+.main-nav {
+  padding: 20px;
+}
+
+@font-face {
+  font-family: 'Fredoka One';
+  src: url('../fonts/FredokaOne-Regular.ttf');
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url('../fonts/VarelaRound-Regular.ttf');
+}
+@font-face {
+  font-family: 'Fredericka the Great';
+  src: url('../fonts/FrederickatheGreat-Regular.ttf');
+}
+
+p {
+  font-family: 'Fredoka One';
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.land h2 {
+  color: #22313F;
+}
+
+h2 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 7.5vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #16a085;
+  line-height: 1.2;
+  letter-spacing: 6px;
+}
+
+.initial-fade {
+  animation: fadeIn 3.4s;
+}
+
+.fadezor {
+  visibility: hidden;
+}
+
+.fadeIn {
+  animation: fadeIn 3.4s;
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+
+.clear {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.main-nav {
+  z-index: 1;
+  text-align: center;
+}
+
+figure {
+  float: left;
+}
+
+
+
+/* Thanks to CSS-Tricks */
+.ribbon {
+ font-size: 24px !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+ width: 50%;
+
+ position: relative;
+ background: #ba89b6;
+ color: #fff;
+ text-align: center;
+ padding: 1em 2em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid #986794;
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #804f7c transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
+}
+
+
+
+
+.ball {
+  top: 0;
+  animation: bounce 5s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in;
+  }
+  34% {
+  }
+  35% {
+    top: 8rem;
+    animation-timing-function: ease-out;
+  }
+  45% {
+  }
+  90% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+
+
+
+
+
+.cloud,
+.cloud2,
+.cloud3 {
+  position: absolute;
+  z-index: -4;
+}
+
+.cloud {
+  top: 0;
+  left: 0;
+}
+
+.cloud2 {
+  left: 30%;
+  top: 0;
+}
+.cloud3 {
+  right: 10%;
+  top: 0;
+}
+
+.truck {
+  max-width: 150px;
+  color: red;
+}
+
+.cow {
+  max-width: 150px;
+  color: red;
+}
+
+
+
+
+
+
+
+
+.forest {
+  padding: 100px 0 200px;
+}
+
+.tree-one,
+.tree-two {
+    bottom: -6px;
+    position: absolute;
+    max-width: 200px;
+    z-index: -1;
+}
+
+.tree-one {
+  left: 10%;
+
+}
+/*.tree-two {
+  left: 50%;
+}*/
+
+.land {
+  background: #e67e22;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: Pie chart */
+.pie {
+  background-image: linear-gradient(to right, transparent 50%, #bdc3c7 0);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #27ae60;
+  border: none;
+  margin: 0 auto;
+  position: relative
+}
+
+.pie::before {
+  content: "";
+  display: block;
+  margin-left: 50%;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: inherit;
+  transform-origin: left;
+  transform: rotate(.45turn);
+}
+
+.pie span {
+  top: 40%;
+  left: 30%;
+  position: absolute;
+  z-index: 9999;
+  font-size: 2.5rem;
+  color: #22313F;
+}
+
+.pie-chart {
+  text-align: center;
+}
+
+/* %# inside of the pie chart */
+
+.pie-chart {
+  text-align: center;
+  font-family: 'Fredoka One';
+}
+
+.pie-chart p  {
+  color: #34495E;
+}
+
+
+.one-third {
+  background: linear-gradient(to right, #F9BF3B 0%,#F9BF3B 33%,#2ECC71 33%,#2ECC71 66%, #16A085 66%,#16A085 100%); /* W3C */
+  color: #F2F1EF;
+  text-align: center;
+  padding: 25px 20px;
+}
+
+.one-third p {
+  font-weight: lighter;
+}
+
+.one-third span {
+  color: #8e44ad;
+}
+
+
+
+
+
+
+
+/* TODO: Water
+============================== */
+
+.water {
+  background: #0072bc;
+}
+
+.ripplezor {
+  display:block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin:-20px 0 0 -20px;
+  width:40px;
+  line-height:40px;
+}
+
+.ripple,
+.ripple:before,
+.ripple:after {
+  display:block;
+  border-radius:2px;
+  width:2px;
+  height:2px;
+  animation:rip 6s infinite;
+}
+.ripple {
+  position:absolute;
+  z-index:-1;
+  top:40px;
+  left:15px;
+}
+.ripple:before,
+.ripple:after {
+  content:'';
+  position:absolute;
+}
+.ripple:before {
+  animation-delay:.2s;
+  left:25px;
+}
+.ripple:after {
+  animation-delay:.8s;
+  top:25px;left:0;
+}
+
+@keyframes rip {
+  0% {
+    box-shadow:0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent,
+               0 0 0 0 transparent;
+  }
+  5% {
+    box-shadow:0 0 0 0 #0072bc,
+               0 0 0 0 rgba(255,255,255,0.4),
+               0 0 0 0 #0072bc,
+               0 0 0 0 rgba(0,0,0,0.08);
+  }
+  100% {
+    box-shadow:0 0 40px 200px #0072bc,
+               0 0 10px 210px transparent,
+               0 0 30px 220px #0072bc,
+               0 0 5px 230px transparent;
+  }
+}
+
+
+.usa-water-use p:first-child {
+  /*padding: 15px;*/
+  background: #6BB9F0;
+  position: relative;
+  border: 4px solid #c2e1f5;
+  padding: 25px;
+  font-size: 5vw;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.usa-water-use p:first-child:after,
+.usa-water-use p:first-child:before {
+	top: 100%;
+	left: 10%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.usa-water-use p:first-child:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #6BB9F0;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.usa-water-use p:first-child:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #c2e1f5;
+	border-width: 36px;
+	margin-left: -36px;
+}
+
+.usa-water-use p:nth-child(1n+2) {
+  color: #C5EFF7;
+  font-size: 5vw;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.fish-hole {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: url("../img/shoal.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 54;
+  border: 5px solid red;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: Rainforest
+============================== */
+
+.acres-rainforest {
+  /*background: url("../img/forest-background.svg");
+  height: 100px;
+  background-color: lightblue;
+  color: yellow;*/
+  background-color: #049372;
+  height: 150px;
+  width: 150px;
+  border: 2px solid #DADFE1;
+}
+
+#forest-svg {
+  width: 500px;
+}
+
+.svg-one {
+  fill: green;
+}
+
+.svg-two {
+  fill: yellow;
+}
+
+.svg-three {
+  fill: firebrick;
+  transition: all 3s ease;
+}
+
+.svg-three:hover {
+  fill: lightblue;
+  z-index: 9999;
+  transition: all 3s ease;
+}
+
+
+.animal-agriculture {
+  padding: 25px;
+  background: #fefefe;
+}
+
+
+
+
+
+
+
+/* TODO: What can we do section
+============================== */
+.person-banner {
+  background-color: #34495E;
+}
+
+.animal-banner {
+  background-color: #34495E;
+}
+
+.animal-agriculture {
+  height: 100%;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+
+
+.animal-agriculture p:first-child {
+  color: red;
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.animal-agriculture p:first-child span {
+  letter-spacing: 4.5px;
+}
+
+.animal-agriculture .procent {
+  color: blue;
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  font-size: 2.3em;
+
+  font-weight: bold;
+}
+
+.animal-agriculture p:last-child {
+  width: 100%;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 800px) {
+  body {
+    background-color: #FFFFFF;
+    /* For WebKit (Safari, Chrome, etc) */
+    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(#54A4C5), to(#FFFFFF)) no-repeat;
+    /* Mozilla,Firefox/Gecko */
+    background: #FFFFFF -moz-linear-gradient(top, #54A4C5, #FFFFFF) no-repeat;
+    /* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#54A4C5, endColorstr=#FFFFFF) no-repeat;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#54A4C5, endColorstr=#54A4C5)" no-repeat;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .main-nav,
+  .heaven,
+  .forest,
+  .water,
+  .land {
+    padding: 150px 0;
+    position: relative;
+    z-index: -5;
+  }
+
+
+
+
+  /* TODO: Pie chart */
+  .pie {
+    background-image: linear-gradient(to right, transparent 50%, #bdc3c7 0);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #27ae60;
+    border: none;
+    margin: 0 auto;
+    position: relative
+  }
+
+  .pie::before {
+    content: "";
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    transform: rotate(.45turn);
+  }
+
+  .left,
+  .right {
+    display: inline-block;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .pie-chart {
+    text-align: center;
+  }
+
+
+  .pie-chart p  {
+    font-family: 'Fredoka One';
+    text-transform: uppercase;
+    color: #34495E;
+    font-weight: bold;
+    letter-spacing: 6px;
+  }
+
+
+  .one-third {
+    background: linear-gradient(to right, #F9BF3B 0%,#F9BF3B 33%,#2ECC71 33%,#2ECC71 66%, #16A085 66%,#16A085 100%); /* W3C */
+    color: #F2F1EF;
+    text-align: center;
+    padding: 25px 20px;
+  }
+
+  .one-third p {
+    font-family: 'Fredoka One';
+    letter-spacing: 5px;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+
+  .one-third span {
+    color: #8e44ad;
+  }
+
+
+
+
+
+
+
+  p {
+    font-size: 1.8rem;
+  }
+
+
+
+  /* Last section
+  ============================== */
+  .person-banner {
+    background-color: #34495E;
+    width: 40%;
+    float: left;
+  }
+
+  .animal-banner {
+    background-color: #34495E;
+    width: 50%;
+    float: right;
+  }
+
+
+
+
+
+
+}
