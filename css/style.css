@@ -1,3 +1,8 @@
+/* TODO IDEA:
+transition on for ex the grass from green to burnt
+*/
+
+
 * {
   box-sizing: border-box;
 }
@@ -24,6 +29,15 @@ span  {
   padding: 20px;
 }
 
+
+.heaven {
+  background: #3498db;
+}
+.forest {
+  background: #90C695;
+}
+
+
 @font-face {
   font-family: 'Fredoka One';
   src: url('../fonts/FredokaOne-Regular.ttf');
@@ -35,6 +49,14 @@ span  {
 @font-face {
   font-family: 'Fredericka the Great';
   src: url('../fonts/FrederickatheGreat-Regular.ttf');
+}
+
+@import url(https://fonts.googleapis.com/css?family=Coustard:900);
+
+h4 {
+  font-family: 'Coustard';
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 p {
@@ -50,10 +72,10 @@ p {
 
 h2 {
   font-family: 'Fredericka the Great', cursive;
-  font-size: 7.5vw;
+  font-size: 6vw;
   text-transform: uppercase;
   text-align: center;
-  color: #16a085;
+  color: #34495e;
   line-height: 1.2;
   letter-spacing: 6px;
 }
@@ -93,114 +115,9 @@ to { opacity: 1; }
   text-align: center;
 }
 
-figure {
-  float: left;
-}
-
-
-
-/* Thanks to CSS-Tricks */
-.ribbon {
- font-size: 24px !important;
- /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-
- width: 50%;
-
- position: relative;
- background: #ba89b6;
- color: #fff;
- text-align: center;
- padding: 1em 2em; /* Adjust to suit */
- margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
-}
-.ribbon:before, .ribbon:after {
- content: "";
- position: absolute;
- display: block;
- bottom: -1em;
- border: 1.5em solid #986794;
- z-index: -1;
-}
-.ribbon:before {
- left: -2em;
- border-right-width: 1.5em;
- border-left-color: transparent;
-}
-.ribbon:after {
- right: -2em;
- border-left-width: 1.5em;
- border-right-color: transparent;
-}
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
- content: "";
- position: absolute;
- display: block;
- border-style: solid;
- border-color: #804f7c transparent transparent transparent;
- bottom: -1em;
-}
-.ribbon .ribbon-content:before {
- left: 0;
- border-width: 1em 0 0 1em;
-}
-.ribbon .ribbon-content:after {
- right: 0;
- border-width: 1em 1em 0 0;
-}
-
-
-
-
-.ball {
-  top: 0;
-  animation: bounce 5s infinite;
-}
-
-@keyframes bounce {
-  0% {
-    top: 0;
-    animation-timing-function: ease-in;
-  }
-  34% {
-  }
-  35% {
-    top: 8rem;
-    animation-timing-function: ease-out;
-  }
-  45% {
-  }
-  90% {
-    top: 0;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-
-
-
-
-
-.cloud,
-.cloud2,
-.cloud3 {
-  position: absolute;
-  z-index: -4;
-}
 
 .cloud {
-  top: 0;
-  left: 0;
-}
-
-.cloud2 {
-  left: 30%;
-  top: 0;
-}
-.cloud3 {
-  right: 10%;
-  top: 0;
+  display: none;
 }
 
 .truck {
@@ -213,10 +130,18 @@ figure {
   color: red;
 }
 
+.truck-staple,
+.cow-staple {
+  background-color: #1abc9c;
+}
 
+.truck-staple {
+  background: linear-gradient(to bottom, #1abc9c 0%,#1abc9c 87%,#1abc9c 87%,#7f8c8d 13%,#7f8c8d 100%); /* W3C */
+}
 
-
-
+.cow-staple {
+  background: linear-gradient(to bottom, #1abc9c 0%,#1abc9c 49%,#1abc9c 49%,#7f8c8d 51%,#7f8c8d 100%); /* W3C */
+}
 
 
 
@@ -251,16 +176,65 @@ figure {
 
 
 
+/* TODO: Testing grounds */
+
+.wrapper {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.left-half {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #34495e;
+  border: 10px solid rgba(0,0,0,0.4);
+  transform: rotate(45deg);
+  bottom: -15px;
+}
+
+.spinner {
+  border-radius: 125px 0 0 125px;
+  z-index: 200;
+  border-right: none;
+}
+
+.right-half {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background: #34495e;
+  border: 10px solid rgba(0,0,0,0.4);
+  transform: rotate(-135deg);
+  border-right: none;
+  right: 0;
+  top: -15px;
+}
 
 
+.rf-cleared-palm-oil,
+.rf-cleared-animal {
+  padding: 10px;
+  text-align: center;
+}
 
+.rf-cleared-palm-oil h4,
+.rf-cleared-animal h4 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align-last: justify;
+  /* TODO: check on caniuse if still needed */
+  -ms-text-align-last: justify;
+}
 
-
-
-
-
-
-
+.rf-cleared-palm-oil {
+  background: #16a085;
+}
+.rf-cleared-animal {
+  background: #27ae60;
+}
 
 
 
@@ -545,11 +519,9 @@ figure {
 /* TODO: What can we do section
 ============================== */
 .person-banner {
-  background-color: #34495E;
 }
 
 .animal-banner {
-  background-color: #34495E;
 }
 
 .animal-agriculture {
@@ -596,6 +568,119 @@ figure {
 
 
 
+.species-lost-wrapper {
+  background: teal;
+  padding: 15px;
+  height: 200px;
+  position: relative;
+}
+
+.sl-number,
+.sl-text {
+  position: absolute;
+}
+.sl-number {
+  width: 20%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+.sl-number h4 {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+}
+
+.sl-text {
+  width: 80%;
+  padding: 25px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sl-text p {
+  margin: 0;
+}
+
+.varela {
+  font-family: 'Varela Round';
+  font-size: 3rem;
+  color: red;
+}
+
+
+
+
+.what-can-we-do {
+  height: 100vh;
+}
+.what-can-we-do {
+  background: url('../img/earth.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 5;
+}
+
+.what-can-we-do h2 {
+  color: #ecf0f1;
+}
+
+
+
+
+
+
+/* TODO: footprint */
+.footprint-wrapper::before {
+  content: " fdsfsdfsd";
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  transform: rotate(45deg);
+  background: red;
+  position: absolute;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.footprint {
+  width: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -606,15 +691,7 @@ figure {
 
 @media (min-width: 800px) {
   body {
-    background-color: #FFFFFF;
-    /* For WebKit (Safari, Chrome, etc) */
-    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(#54A4C5), to(#FFFFFF)) no-repeat;
-    /* Mozilla,Firefox/Gecko */
-    background: #FFFFFF -moz-linear-gradient(top, #54A4C5, #FFFFFF) no-repeat;
-    /* IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#54A4C5, endColorstr=#FFFFFF) no-repeat;
-    /* IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#54A4C5, endColorstr=#54A4C5)" no-repeat;
+    background-color: #2c3e50;
   }
 
   .container {
@@ -626,12 +703,79 @@ figure {
   .heaven,
   .forest,
   .water,
-  .land {
-    padding: 150px 0;
+  .land,
+  .what-can-we-do {
+    padding: 3vh 0;
     position: relative;
     z-index: -5;
   }
 
+
+  /* TODO: move this to a media query? */
+  figure {
+    float: left;
+    width: 220px;
+    margin-right: 15px;
+  }
+
+
+
+  /* Cloud and bounce animations */
+  .ball {
+    top: 0;
+    animation: bounce 5s infinite;
+  }
+
+  @keyframes bounce {
+    0% {
+      left: 0;
+      animation-timing-function: ease-in;
+    }
+    34% {
+    }
+    35% {
+      left: 8rem;
+      animation-timing-function: ease-out;
+    }
+    45% {
+    }
+    90% {
+      left: 0;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+
+
+
+  .cloud {
+    display: block;
+  }
+
+  .cloud,
+  .cloud2,
+  .cloud3 {
+    position: absolute;
+    z-index: -4;
+    width: 200px;
+    height: 200px;
+  }
+
+  .cloud {
+    top: 0;
+    left: 0;
+  }
+
+  .cloud2 {
+    left: 30%;
+    top: 0;
+  }
+  .cloud3 {
+    right: 10%;
+    top: 0;
+  }
 
 
 
@@ -676,13 +820,6 @@ figure {
   }
 
 
-  .pie-chart p  {
-    font-family: 'Fredoka One';
-    text-transform: uppercase;
-    color: #34495E;
-    font-weight: bold;
-    letter-spacing: 6px;
-  }
 
 
   .one-third {
@@ -692,22 +829,9 @@ figure {
     padding: 25px 20px;
   }
 
-  .one-third p {
-    font-family: 'Fredoka One';
-    letter-spacing: 5px;
-    font-weight: lighter;
-    text-transform: uppercase;
-  }
-
   .one-third span {
     color: #8e44ad;
   }
-
-
-
-
-
-
 
   p {
     font-size: 1.8rem;
@@ -715,19 +839,35 @@ figure {
 
 
 
-  /* Last section
-  ============================== */
-  .person-banner {
-    background-color: #34495E;
-    width: 40%;
-    float: left;
+
+
+
+/* TODO: Testing media queries rainforest cleared*/
+  .rf-cleared-palm-oil,
+  .rf-cleared-animal {
+    padding: 10px;
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
   }
 
-  .animal-banner {
-    background-color: #34495E;
-    width: 50%;
-    float: right;
+  .rf-cleared-palm-oil h4,
+  .rf-cleared-animal h4 {
+    font-size: 5rem;
+    margin: 0;
+    text-align-last: center;
+    /* TODO: check on caniuse if still needed */
+    -ms-text-align-last: center;
   }
+
+  .rf-cleared-palm-oil {
+    background: #16a085;
+  }
+  .rf-cleared-animal {
+    background: #27ae60;
+  }
+
+
 
 
 
