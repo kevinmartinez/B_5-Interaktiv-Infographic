@@ -3,19 +3,159 @@ transition on for ex the grass from green to burnt
 */
 
 
+
+
+
+
+
+/* TODO SMACSS */
+
+
+/* 1. Base
+  Default or general doc styles, margin, paddings that should be applied to an element wherever it is on a page, or setting a style for a link
+
+  Applied using an element, descendant or child selector, does not include any Class or ID, it is defining how the element should look like anywhere in the page.
+
+  ex: body {margin:0} a{color:#123} p{margin-bottom:1.5em}
+
+  Normalize.css belong to Base rule
+
+============================== */
+
+/* TODO: this is only for developmen, do not forget the body bg color in the 760px media query 1/1 16*/
+body {
+  background-color: #ccc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+    color: #34495e;
+}
 * {
   box-sizing: border-box;
 }
 
 /* TODO: Remove red helper div */
-div {
+/*div {
   border: 1px solid red;
-}
+}*/
+
 /* TODO: This is a helper class*/
 span  {
   color: #e8e820;
   font-weight: bold;
 }
+
+h4 {
+
+}
+
+p {
+  color: #eee;
+}
+
+p,
+h4 {
+  font-family: 'Fredoka One';
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.land h2 {
+  color: #22313F;
+}
+
+h1,
+h2 {
+  font-family: 'Fredericka the Great', cursive;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 6px;
+}
+
+h3 {
+  font-family: 'Oswald';
+  font-weight: bold;
+  font-size: 4vw;
+  line-height: 1.2;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 6.5vw;
+  color: #fefefe;
+}
+
+h2 {
+  font-size: 6vw;
+
+  background-color: #fde3a7;
+  padding: 3%;
+
+  border: 2px solid rgba(52, 73, 94, 0.6);
+  outline: 10px solid #fde3a7;
+  transform: rotate(-1deg);
+}
+
+
+/* 2. Layout
+  Allow to divide page into sections and they contain several Modules
+
+  How we position various elements on the page
+  categories:
+  -Major: Layout styles, big chunks of info such as header, nav, footer or sidebar. Normally they only appear once in a page, then it is a good practise to use ID's for them
+  -Minor: Forms, buttons navigation menus, are contained within major components
+
+============================== */
+.l-clear::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l-container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+/* 3. Module
+  Reusable part of a page. Sidebar widgets, page headers, banners, footers etc
+
+============================== */
+
+/* 4. State
+  Describe various states of the Layout or Modules, for ex expanded or collapsed state, or active, inactive or visible or hidden
+
+============================== */
+
+/* 5. Theme
+  For theming, similar to state rules. Describe how Modules looks like when another theme is being used
+
+============================== */
+
+
+
+
+
+
+
+
+
+#clouds {
+  margin-bottom: -5px;
+}
+
+#clouds path {
+    fill: #ecf0f1;
+    stroke: #ecf0f1;
+}
+
+
+
+
+
 
 .main-nav,
 .heaven,
@@ -25,18 +165,53 @@ span  {
   padding: 20px 0;
   position: relative;
 }
+
+.main-nav p,
+.heaven p,
+.forest p,
+.water p,
+.land p {
+  font-size: 3vw;
+  margin: 5px 0;
+}
+
 .main-nav {
   padding: 20px;
 }
 
-
 .heaven {
-  background: #3498db;
-}
-.forest {
-  background: #90C695;
+  background: #E7F7FF;
 }
 
+.forest {
+  padding: 100px 0 300px;
+  /*background-position: bottom;
+  background-repeat: repeat-x;*/
+  background-color: #2ecc71;
+}
+
+.forest::before {
+  width: 100%;
+  height: 200px;
+  content: "";
+  background: url("../img/forest.svg") rgba(39, 174, 96,1.0) 5% bottom repeat-x;
+  bottom: -1px;
+  position: absolute;
+}
+
+.forest p {
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.water {
+
+}
+
+.land {
+  background: #825a2c;
+}
 
 @font-face {
   font-family: 'Fredoka One';
@@ -53,38 +228,13 @@ span  {
 
 @import url(https://fonts.googleapis.com/css?family=Coustard:900);
 
-h4 {
-  font-family: 'Coustard';
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-p {
-  font-family: 'Fredoka One';
-  line-height: 1.5;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.land h2 {
-  color: #22313F;
-}
-
-h2 {
-  font-family: 'Fredericka the Great', cursive;
-  font-size: 6vw;
-  text-transform: uppercase;
-  text-align: center;
-  color: #34495e;
-  line-height: 1.2;
-  letter-spacing: 6px;
-}
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
 
 .initial-fade {
   animation: fadeIn 3.4s;
 }
 
-.fadezor {
+.is-hidden {
   visibility: hidden;
 }
 
@@ -98,23 +248,10 @@ from { opacity: 0; }
 to { opacity: 1; }
 }
 
-
-.clear {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.container {
-  max-width: 95%;
-  margin: 0 auto;
-}
-
 .main-nav {
-  z-index: 1;
+  z-index: 2;
   text-align: center;
 }
-
 
 .cloud {
   display: none;
@@ -143,18 +280,12 @@ to { opacity: 1; }
   background: linear-gradient(to bottom, #1abc9c 0%,#1abc9c 49%,#1abc9c 49%,#7f8c8d 51%,#7f8c8d 100%); /* W3C */
 }
 
-
-
-.forest {
-  padding: 100px 0 200px;
-}
-
 .tree-one,
 .tree-two {
     bottom: -6px;
     position: absolute;
     max-width: 200px;
-    z-index: -1;
+    z-index: 2;
 }
 
 .tree-one {
@@ -165,8 +296,30 @@ to { opacity: 1; }
   left: 50%;
 }*/
 
-.land {
-  background: #e67e22;
+
+
+
+
+
+
+
+/* TODO: Climate change*/
+.diet-info p {
+  color: #000;
+  text-align: center;
+}
+
+.diet-info {
+  text-align: center;
+}
+
+.livestock {
+  color: #000;
+  text-align: center;
+}
+
+.livestock p {
+  color: #000;
 }
 
 
@@ -220,8 +373,13 @@ to { opacity: 1; }
   text-align: center;
 }
 
+.deforestation-palm-agriculture h3 {
+  color: #fff;
+}
+
 .rf-cleared-palm-oil h4,
 .rf-cleared-animal h4 {
+  color: #fff;
   font-size: 2.5rem;
   margin: 0;
   text-align-last: justify;
@@ -229,12 +387,23 @@ to { opacity: 1; }
   -ms-text-align-last: justify;
 }
 
-.rf-cleared-palm-oil {
+/*.rf-cleared-palm-oil {
   background: #16a085;
 }
 .rf-cleared-animal {
   background: #27ae60;
-}
+}*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -291,7 +460,6 @@ to { opacity: 1; }
   color: #34495E;
 }
 
-
 .one-third {
   background: linear-gradient(to right, #F9BF3B 0%,#F9BF3B 33%,#2ECC71 33%,#2ECC71 66%, #16A085 66%,#16A085 100%); /* W3C */
   color: #F2F1EF;
@@ -313,73 +481,54 @@ to { opacity: 1; }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* TODO: Water
 ============================== */
 
 .water {
-  background: #0072bc;
+  background: #4F99C7;
 }
 
-.ripplezor {
-  display:block;
-  position:absolute;
-  top:50%;
-  left:50%;
-  margin:-20px 0 0 -20px;
-  width:40px;
-  line-height:40px;
+.wu-hamburger {
+  padding: 55px;
+  background: #f9bf3b;
+  border: 25px solid #FF5630;
+  text-align: center;
+}
+.wu-hamburger p {
+
 }
 
-.ripple,
-.ripple:before,
-.ripple:after {
-  display:block;
-  border-radius:2px;
-  width:2px;
-  height:2px;
-  animation:rip 6s infinite;
-}
-.ripple {
-  position:absolute;
-  z-index:-1;
-  top:40px;
-  left:15px;
-}
-.ripple:before,
-.ripple:after {
-  content:'';
-  position:absolute;
-}
-.ripple:before {
-  animation-delay:.2s;
-  left:25px;
-}
-.ripple:after {
-  animation-delay:.8s;
-  top:25px;left:0;
+.icon-hamburger {
+  width:20%;
+  max-width: 150px;
+  margin: 0 auto;
 }
 
-@keyframes rip {
-  0% {
-    box-shadow:0 0 0 0 transparent,
-               0 0 0 0 transparent,
-               0 0 0 0 transparent,
-               0 0 0 0 transparent;
-  }
-  5% {
-    box-shadow:0 0 0 0 #0072bc,
-               0 0 0 0 rgba(255,255,255,0.4),
-               0 0 0 0 #0072bc,
-               0 0 0 0 rgba(0,0,0,0.08);
-  }
-  100% {
-    box-shadow:0 0 40px 200px #0072bc,
-               0 0 10px 210px transparent,
-               0 0 30px 220px #0072bc,
-               0 0 5px 230px transparent;
-  }
+.wu-gallon {
+  background: url("../img/gallon.svg");
+  background-size: 50px;
+  color: #E4F1FE;
+  min-height: 400px;
 }
 
+.wu-fresh-water {
+  background: teal;
+  padding: 25px;
+  border: 5px solid #ececec;
+}
 
 .usa-water-use p:first-child {
   /*padding: 15px;*/
@@ -410,6 +559,7 @@ to { opacity: 1; }
 	border-width: 30px;
 	margin-left: -30px;
 }
+
 .usa-water-use p:first-child:before {
 	border-color: rgba(194, 225, 245, 0);
 	border-top-color: #c2e1f5;
@@ -438,29 +588,6 @@ to { opacity: 1; }
 
 
 
-/*.fish-hole {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  display: inline-block;
-  background-image: url("../img/shoal.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 54;
-  border: 5px solid red;
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -469,6 +596,13 @@ to { opacity: 1; }
 
 /* TODO: Rainforest
 ============================== */
+.acres-cleared {
+  background: url(../img/forest-cleared.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  min-height: 400px;
+}
 
 .acres-rainforest {
   /*background: url("../img/forest-background.svg");
@@ -504,7 +638,6 @@ to { opacity: 1; }
   transition: all 3s ease;
 }
 
-
 .animal-agriculture {
   padding: 25px;
   background: #fefefe;
@@ -516,20 +649,242 @@ to { opacity: 1; }
 
 
 
-/* TODO: What can we do section
-============================== */
-.person-banner {
+
+
+#bigTriangleShadow {
+
 }
 
-.animal-banner {
+
+#trianglePath1 {
+    fill: rgba(46, 204, 113,1.0);
+    stroke: rgba(46, 204, 113,1.0);
 }
+
+
+
+#trianglePath2 {
+    fill: #29a05b;
+    stroke: #03A678;
+}
+
+.forest-second-half-background {
+  background-color: rgba(39, 174, 96,1.0);
+  margin-bottom: -2px;
+}
+
+
+
+/* TODO: Species extinction
+============================== */
+.wm-cause {
+  background: url('../img/world-map.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+}
+
+.wa-cow-people {
+  padding: 50px;
+}
+
+.wa-cow {
+  padding: 25px;
+  color: #bdc3c7;
+}
+
+.wa-people {
+  padding: 25px;
+  background: url("../img/dude_girl.svg");
+  background-position: bottom;
+  min-height: 400px;
+  color: #2c3e50;
+}
+
+.wa-cow img {
+  max-height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: Fisheries
+============================== */
+
+.fi-pulled {
+  border: 10px solid #2c3e50;
+  background: #e74c3c;
+  margin-bottom: 25px;
+}
+
+.fi-pulled,
+.fi-tons {
+  padding: 50px;
+}
+
+.fi-pulled p,
+.fi-tons p {
+  color: #ecf0f1;
+  font-size: 6vw;
+  margin: 0;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.fi-tons p {
+  font-size: 5vw;
+}
+
+.fi-tons {
+  border: 10px solid #e74c3c;
+  background: #2c3e50;
+}
+
+.fi-exploit-wrapper {
+  padding: 25px;
+}
+
+.fi-exploit {
+  background: url(../img/fish-exploit.svg);
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.fi-exploit h3 {
+  color: #1F3A93;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.fi-exploit-pie {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: firebrick;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    border-left: 25px solid #e74c3c;
+    border-bottom: 25px solid #e74c3c;
+    border-top: 25px solid #e74c3c;
+    border-right: 25px solid #2980b9;
+    margin: 0 auto;
+    position: relative;
+}
+
+.fi-exploit-pie p {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.fi-bycaught {
+  border: 25px solid #2980b9;
+  padding: 10%;
+  position: relative;
+}
+
+/* Cloud and bounce animations */
+.fi-bycaught-boat {
+  top: 0;
+  animation: move 20s infinite;
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    left: 100%;
+    animation-timing-function: ease-out;
+  }
+}
+
+.boat-wrapper {
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.fi-bycaught-boat {
+  width: 250px;
+
+  position: absolute;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+}
+
+
+
+.container svg {
+    display: block;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+
+#stamp {
+  margin-top: -1px;
+  margin-bottom: -5px;
+  background: #4F99C7;
+}
+
+#stamp path {
+    fill: #825A2C;
+    stroke: #3498db;
+}
+
+
+
+
+
+
+
+
+
+/* what can we do divider*/
+#curveUpColor{
+  background: #3498db;
+}
+
+#curveUpColor path, #curveDownColor path {
+    fill: #2C3E50;
+    stroke: #2C3E50;
+}
+
+
+
+
+/* TODO: Deforestation
+============================== */
 
 .animal-agriculture {
   height: 100%;
   margin: 0 auto;
   font-size: 1.5em;
 }
-
 
 .animal-agriculture p:first-child {
   color: red;
@@ -564,57 +919,70 @@ to { opacity: 1; }
   letter-spacing: 10px;
 }
 
+.deforestation-palm-agriculture {
+  background: url(../img/deforestation-bg.svg);
+  background-repeat: repeat;
+}
 
-
-
-
+/*  TODO */
+/* TODO: fix the height*/
 .species-lost-wrapper {
-  background: teal;
   padding: 15px;
-  height: 200px;
-  position: relative;
-}
-
-.sl-number,
-.sl-text {
-  position: absolute;
-}
-.sl-number {
-  width: 20%;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-}
-.sl-number h4 {
-  font-size: 3rem;
-  margin: 0;
   text-align: center;
 }
 
-.sl-text {
-  width: 80%;
-  padding: 25px;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.sl-number {
+  width: 20%;
+  font-size: 15vw;
+  margin: 0 auto;
 }
-.sl-text p {
+
+.sl-number h4 {
+  text-align: center;
   margin: 0;
+  letter-spacing: 16px;
 }
 
-.varela {
-  font-family: 'Varela Round';
-  font-size: 3rem;
-  color: red;
+.sl-text p {
+  color: #22313F;
+}
+
+
+.svg-img {
+
+}
+
+.snake {
+  width: 150px;
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: What can we do section
+============================== */
+
+.what-can-we-do {
+  padding-top: 550px;
+}
 
 .what-can-we-do {
   height: 100vh;
 }
+
 .what-can-we-do {
   background: url('../img/earth.svg');
   background-position: center;
@@ -624,28 +992,13 @@ to { opacity: 1; }
 }
 
 .what-can-we-do h2 {
-  color: #ecf0f1;
+  color: #2C3E50;
 }
-
-
-
-
-
 
 /* TODO: footprint */
-.footprint-wrapper::before {
-  content: " fdsfsdfsd";
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  transform: rotate(45deg);
-  background: red;
-  position: absolute;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-}
 .footprint {
-  width: 250px;
+  width: 50%;
+  max-width: 500px;
 }
 
 
@@ -667,36 +1020,17 @@ to { opacity: 1; }
 
 
 
+/* TODO: Media queries
+============================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 800px) {
+@media (min-width: 760px) {
   body {
     background-color: #2c3e50;
   }
 
-  .container {
+  .l-container {
     width: 80%;
-    max-width: 1200px;
+    max-width: 1400px;
   }
 
   .main-nav,
@@ -707,7 +1041,13 @@ to { opacity: 1; }
   .what-can-we-do {
     padding: 3vh 0;
     position: relative;
-    z-index: -5;
+    z-index: 1;
+  }
+  .forest {
+    padding-bottom: 200px;
+  }
+  .what-can-we-do {
+    padding-top: 550px;
   }
 
 
@@ -723,7 +1063,7 @@ to { opacity: 1; }
   /* Cloud and bounce animations */
   .ball {
     top: 0;
-    animation: bounce 5s infinite;
+    animation: bounce 45s infinite;
   }
 
   @keyframes bounce {
@@ -734,7 +1074,7 @@ to { opacity: 1; }
     34% {
     }
     35% {
-      left: 8rem;
+      left: 100%;
       animation-timing-function: ease-out;
     }
     45% {
@@ -758,7 +1098,7 @@ to { opacity: 1; }
   .cloud2,
   .cloud3 {
     position: absolute;
-    z-index: -4;
+    z-index: 2;
     width: 200px;
     height: 200px;
   }
@@ -860,12 +1200,6 @@ to { opacity: 1; }
     -ms-text-align-last: center;
   }
 
-  .rf-cleared-palm-oil {
-    background: #16a085;
-  }
-  .rf-cleared-animal {
-    background: #27ae60;
-  }
 
 
 
