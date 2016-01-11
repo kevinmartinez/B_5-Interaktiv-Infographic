@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="245px" height="93px" viewBox="0 0 245 93" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled 12</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="deforestation-bg" sketch:type="MSLayerGroup">
+            <g id="Page-1" sketch:type="MSShapeGroup">
+                <g id="Deforestation">
+                    <g id="stubbe" transform="translate(110.333333, 45.200000)">
+                        <rect id="Rectangle-1" fill="#87794E" x="0" y="0" width="20" height="28.2666667"></rect>
+                        <rect id="Rectangle-2" fill="#825A2C" x="10" y="0" width="10" height="28.2666667"></rect>
+                    </g>
+                    <g id="Triangles" transform="translate(0.066667, 5.109333)" fill="#8F8073">
+                        <path d="M114.2,5.088 L95,5.088 L95.0000004,0 L114.2,5.088 L114.2,5.088 Z" id="Triangle-1"></path>
+                        <path d="M153.6,84.752 L145.746354,84.752 L140.266667,84.752 L140.266667,81.36 L153.6,84.752 L153.6,84.752 Z" id="Triangle-1"></path>
+                        <path d="M173.795551,22.392 L178.536979,22.392 L178.536979,19 L167,22.392 L173.795551,22.392 L173.795551,22.392 Z" id="Triangle-1"></path>
+                        <path d="M97.9101787,86.3066667 L104.824761,86.3066667 L104.824761,81.36 L88,86.3066667 L97.9101787,86.3066667 L97.9101787,86.3066667 Z" id="Triangle-1"></path>
+                        <path d="M9.91017873,39.9466667 L16.8247613,39.9466667 L16.824761,35 L0,39.9466667 L9.91017873,39.9466667 L9.91017873,39.9466667 Z" id="Triangle-1"></path>
+                        <path d="M209.274414,59.36 L199,59.36 L199,53 L224,59.36 L209.274414,59.36 Z" id="Triangle-1"></path>
+                    </g>
+                    <g id="stubbe" transform="translate(64.000000, 16.000000)">
+                        <rect id="Rectangle-1" fill="#87794E" x="0" y="0" width="24" height="16.570115"></rect>
+                        <rect id="Rectangle-2" fill="#825A2C" x="12" y="0" width="12" height="16.570115"></rect>
+                    </g>
+                    <g id="stubbe" transform="translate(13.000000, 61.000000)">
+                        <rect id="Rectangle-1" fill="#87794E" x="0" y="0" width="35" height="24.3678161"></rect>
+                        <rect id="Rectangle-2" fill="#825A2C" x="17.5" y="0" width="17.5" height="24.3678161"></rect>
+                    </g>
+                    <g id="stubbe" transform="translate(210.000000, 0.000000)">
+                        <rect id="Rectangle-1" fill="#87794E" x="0" y="0" width="35" height="24.3678161"></rect>
+                        <rect id="Rectangle-2" fill="#825A2C" x="17.5" y="0" width="17.5" height="24.3678161"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
