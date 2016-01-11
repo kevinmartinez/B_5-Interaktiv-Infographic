@@ -8,20 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" type="text/css">
 </head>
 <body>
   <!-- Cowspiracy Infographic Start -->
   <!-- TODO: change class from main-nav to more appropiate -->
   <header class="main-nav">
-     <h1>Cowspiracy Infographic</h1>
-    <img class="cloud ball" src="img/cloud.svg" alt="">
-    <!-- <img class="cloud2" src="img/cloud.svg" alt=""> -->
-    <!-- <img class="cloud3" src="img/cloud.svg" alt=""> -->
+    <div class="heaven-bg">
+      <h1>Cowspiracy Infographic</h1>
+     <img class="cloud ball" src="img/cloud.svg" alt="">
+     <!-- <img class="cloud2" src="img/cloud.svg" alt=""> -->
+     <!-- <img class="cloud3" src="img/cloud.svg" alt=""> -->
+    </div>
   </header>
 
   <!-- SVG cloud section divider -->
-  <svg id="clouds" xmlns="http://www.w3.org/2000/svg" versione="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <svg id="clouds" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" viewbox="0 0 100 100" preserveaspectratio="none">
     <path d="M-5 100 Q 0 20 5 100 Z
          M0 100 Q 5 0 10 100
          M5 100 Q 10 30 15 100
@@ -45,81 +47,60 @@
          M95 100 Q 100 15 105 100 Z"></path>
   </svg>
 
-
-
-
-
-
-
-
   <!-- TODO: Climate change -->
-  <article id="heaven" class="heaven">
+  <section id="heaven" class="heaven">
     <div class="l-container">
       <h2 class="initial-fade">Climate change</h2>
 
       <div class="l-clear">
-        <section>
+        <article class="emission">
           <h3>Global green house emissions:</h3>
-          <figure class="truck-staple">
+          <div class="truck-wrapper l-clear">
             <img class="truck" src="img/car.svg" alt="truck" />
-            <figcaption><p>13% due to transport (Road, Rail, Air &amp; Marine)</p></figcaption>
-          </figure>
-          <figure class="cow-staple">
-            <img class="cow" src="img/cow.svg" alt="truck" />
-            <figcaption><p>51% due to livestock and their byproducts</p></figcaption>
-          </figure>
-        </section>
-      </div>
-
-      <div class="diet-info">
-        <section>
-          <h3>A plant based diet</h3>
-          <p>Cuts your carbon footprint</p>
-          <div class="footprint-wrapper"><img class="footprint" src="img/converse.svg" alt="">
+            <div class="truck-staple">
+            </div>
+            <p>13% due to transport (Road, Rail, Air &amp; Marine)</p>
           </div>
-          <!-- <div class="wrapper">
-            <div class="spinner left-half"></div>
-          </div> -->
-          <p>by 50%</p>
-          <!-- <div class="wrapper">
-            <div class="spinner right-half"></div>
-          </div> -->
-        </section>
-      </div>
 
-      <div>
-        <!-- TODO: Testing semantics before final semantic restructure, so remove article if you contine to use sections... -->
-        <article class="livestock">
-                  <p>Livestock is responsible for</p>
-                  <p>65%</p><p>Nitrous oxide emissions</p>
-                  <p>{ a ghg 296x more destructive than co2 }</p>
+          <div class="cow-wrapper l-clear">
+            <img class="cow" src="img/cow.svg" alt="truck" />
+            <div class="cow-staple"></div>
+            <p>51% due to livestock and their byproducts</p>
+          </div>
+
         </article>
       </div>
+
+      <article class="diet-info">
+        <h3>A plant based diet</h3>
+        <p>Cuts your carbon footprint</p>
+        <div class="footprint-wrapper"><img class="footprint" src="img/converse.svg" alt="">
+        </div>
+        <p>by 50%</p>
+      </article>
+        <!-- TODO: Testing semantics before final semantic restructure, so remove article if you contine to use sections... -->
+      <article class="livestock">
+        <h3>Livestock is responsible for</h3>
+        <p>65%</p><p>Nitrous oxide emissions</p>
+        <p>{ a ghg 296x more destructive than co2 }</p>
+      </article>
     </div>
-  </article>
-
-
-
-
-
-
-
-
+  </section>
 
 
   <!-- TODO: Deforestation -->
-  <article id="forest" class="forest">
+  <section id="forest" class="forest">
     <div class="l-container">
       <h2 class="is-hidden">Deforestation</h2>
 
 
 
-      <div class="acres-cleared" id="acresCleared">
+      <article class="acres-cleared" id="acresCleared">
         <p><span>1-2</span> Acres of rainforest are cleared every second</p>
-      </div>
+      </article>
 
 
-      <div class="animal-agriculture">
+      <article class="animal-agriculture paragraph-black">
         <div id="animalAgriculture">
           <p>Animal agriculture<br>
             <span>is responsible for</span>
@@ -127,10 +108,10 @@
           <div class="procent">91%</div>
         <p>of amazon destruction</p>
         </div>
-      </div>
+      </article>
 
 
-      <div class="deforestation-palm-agriculture">
+      <article class="deforestation-palm-agriculture">
         <h3>Acres of rainforest cleared:</h3>
         <div class="rf-cleared-palm-oil">
           <h4>26 Million</h4>
@@ -143,7 +124,7 @@
         <div class="acres-cleared-wrapper">
 
         </div>
-      </div>
+      </article>
       <!-- TODO: Species extinction -->
       <h2 class="is-hidden">Species Extinction</h2>
       <div class="species-lost-wrapper">
@@ -161,39 +142,23 @@
     </div>
     <div class="forest-second-half-background">
       <!-- Forest second half section divider -->
-      <svg id="bigTriangleShadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <svg id="bigTriangleShadow" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
       				<path id="trianglePath1" d="M0 0 L50 100 L100 0 Z"></path>
       				<path id="trianglePath2" d="M50 100 L100 40 L100 0 Z"></path>
       			</svg>
       <div class="l-container">
         <div class="wm-cause">
           <h3>Animal agriculture</h3>
-          <p>
-            is the leading cause of
-          </p>
+          <p>is the leading cause of</p>
           <p>species extinction</p>
           <p>ocean dead zones</p>
           <p>water pollution</p>
           <p>and</p>
-          <p>
-            habitat destruction
-          </p>
+          <p>habitat destruction</p>
         </div>
       </div>
     </div>
-
-      <!-- <img class="tree-one" src="img/christmas-tree-icon.png" alt=""><img class="tree-two" src="img/christmas-tree-icon.png" alt=""> -->
-
-  </article>
-
-
-
-
-
-
-
-
-
+  </section>
 
 
   <!-- TODO: Land use -->
@@ -221,33 +186,35 @@
       <p><span>Land needed to feed</span> 1 person <span>for</span> 1 year:</p>
       <p><span>Vegan =</span> 1/6th acre</p>
       <p><span>Meat eater =</span> 18x vegan</p>
+      </div>
+    </article>
+
+
       <!--  TODO: Waste-->
-      </div>
-      <div class="l-container">
-      <h2 class="is-hidden">Waste</h2>
+      <article id="waste" class="waste">
+        <div class="l-container">
+        <h2 class="is-hidden">Waste</h2>
 
-      <div class="wa-cow-people">
-        <div class="wa-cow">
-        <p>Waste from a farm of 2500 dairy cows<img src="img/cow.svg" alt=""></p>
+        <div class="wa-cow-people">
+          <div class="wa-cow">
+          <p>Waste from a farm of 2500 dairy cows</p>
+          <img src="img/cow.svg" alt="">
+          </div>
+          <p>Equals</p>
+          <div class="wa-people">
+            <p>Waste from a city of 411 000 people</p>
+          </div>
         </div>
-        <div class="wa-people">
-          <p>=</p>
-          <p>Waste from a city of 411 000 people</p>
+
+        <div>
+          <p><span>Every minute</span> 7 million <span>pounds of excrement are produced by animals raised for food in the US</span></p>
         </div>
-      </div>
 
-      <div>
-        <p><span>Every minute</span> 7 million <span>pounds of excrement are produced by animals raised for food in the US</span></p>
-      </div>
-
-    </div><!-- Container end -->
-  </article>
+      </div><!-- Container end -->
+      </article>
 
 
-
-
-
-  <svg id="stamp" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <svg id="waves" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
   				<path d="M0 0 Q 2.5 40 5 0
   						 Q 7.5 40 10 0
   						 Q 12.5 40 15 0
@@ -272,8 +239,6 @@
   			</svg>
 
 
-
-
   <!-- TODO: Water use -->
   <article id="water" class="water">
     <div class="l-container">
@@ -286,8 +251,8 @@
           <p>1 hamburger</p>
           <p>equals</p>
         </div>
+        <p>660 gallons of water</p>
         <div class="wu-gallon">
-          <p>660 gallons of water</p>
         </div>
         <div class="wu-shower">
           <p>
@@ -298,7 +263,7 @@
 
       <div class="wu-fresh-water">
         <p>The meat &amp; dairy indistry use</p>
-        <div>1/3</div>
+        <p>1/3</p>
         <p>of earths fresh water</p>
       </div>
 
@@ -347,22 +312,17 @@
   </article>
 
 
-
-
-
-  <svg id="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <svg id="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewbox="0 0 100 100" preserveaspectratio="none">
   				<path d="M0 100 C 20 0 50 0 100 100 Z"></path>
   			</svg>
 
 
-
-
   <!-- TODO: What can we do -->
-  <article id="what-can-we-do" class="what-can-we-do">
+  <section id="what-can-we-do" class="what-can-we-do">
     <div class="l-container">
       <h2 class="is-hidden">What can we do?</h2>
       <section class="earth-background">
-        <div class="person-banner banner">
+        <div>
           <p>A person who follows a vegan diet produces 50% less co2 and uses 1/11th oil, 1/13th water and 1/18th land compared to a meat eater</p>
         </div>
         <div class="animal-banner">
@@ -370,9 +330,11 @@
         </div>
       </section>
     </div>
-  </article>
+  </section>
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="js/animation.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/selectorAPI.js"></script>
 </body>
 </html>
