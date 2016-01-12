@@ -1,3 +1,5 @@
+// jQuery
+
 // Fade animation för mina h2
 $(window).scroll(function() {
   $('.is-hidden').each(function(){

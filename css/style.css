@@ -338,6 +338,17 @@ to { opacity: 1; }
 
 
 
+/* TODO: JavaScript associated CSS */
+
+/* For reveal text script */
+.hide-text {
+  display: none;
+}
+.show-text {
+  display: block;
+}
+
+
 
 
 
@@ -800,18 +811,6 @@ to { opacity: 1; }
 /* Cloud and bounce animations */
 .fi-bycaught-boat {
   top: 0;
-  animation: move 20s infinite;
-}
-
-@keyframes move {
-  0% {
-    left: 0;
-    animation-timing-function: ease-in;
-  }
-  100% {
-    left: 100%;
-    animation-timing-function: ease-out;
-  }
 }
 
 .boat-wrapper {
@@ -995,6 +994,17 @@ svg:not(:root) {
 .what-can-we-do h2 {
   color: #2C3E50;
 }
+
+.days-since-vegan-wrapper {
+  border-top: 2px solid #f39c12;
+  margin-top: 25px;
+  margin-bottom: 35px
+}
+
+.days-since-vegan-wrapper p {
+  color: #f1c40f;
+}
+
 
 /* TODO: footprint */
 .footprint {
@@ -1348,6 +1358,23 @@ svg:not(:root) {
 
   .boat-wrapper {
     margin-bottom: 120px;
+  }
+
+  /* Cloud and bounce animations */
+  .fi-bycaught-boat {
+    top: 0;
+    animation: move 20s infinite;
+  }
+
+  @keyframes move {
+    0% {
+      left: 0;
+      animation-timing-function: ease-in;
+    }
+    100% {
+      left: 100%;
+      animation-timing-function: ease-out;
+    }
   }
 
   .fi-bycaught-boat {
