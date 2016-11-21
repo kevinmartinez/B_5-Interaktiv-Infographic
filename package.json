@@ -1,0 +1,26 @@
+{
+  "name": "b_5-interaktiv-infographic",
+  "version": "1.0.0",
+  "description": "B_5 Interactive Infographic about the Cowspiracy",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^3.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinmartinez/B_5-Interaktiv-Infographic.git"
+  },
+  "keywords": [
+    "Infographic"
+  ],
+  "author": "Kevin Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinmartinez/B_5-Interaktiv-Infographic/issues"
+  },
+  "homepage": "https://github.com/kevinmartinez/B_5-Interaktiv-Infographic#readme"
+}
