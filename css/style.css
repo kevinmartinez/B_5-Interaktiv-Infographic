@@ -382,7 +382,7 @@ to { opacity: 1; }
 }
 
 .livestock p {
-  color: #000;
+  color: #2c3e50;
 }
 
 
@@ -1028,6 +1028,19 @@ svg:not(:root) {
 
 
 
+/* TODO: Fix this.... TODO */
+
+.created-by {
+    margin-bottom: 8%;
+}
+
+.created-by h4 {
+    color: #E6DCDB;
+}
+
+.created-by a {
+    color: #44BBFF;
+}
 
 
 
@@ -1074,16 +1087,20 @@ svg:not(:root) {
 
 
 @media (min-width: 450px) {
+
   .acres-cleared {
     min-height: 200px;
   }
+
   .fi-exploit {
     min-height: 100px;
   }
+
   .truck-wrapper p,
   .cow-wrapper p {
     display: inline;
   }
+
 }
 
 
@@ -1424,4 +1441,4 @@ svg:not(:root) {
     background-size: contain;
   }
 
-} /* END: Media queries */
+}
